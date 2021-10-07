@@ -33,6 +33,9 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
 }
+.days p {
+  font-size: 14px;
+}
 /* main article p {
   padding: 30px;
 }

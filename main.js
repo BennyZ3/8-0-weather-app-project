@@ -20,7 +20,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
         let newUrl = document.createElement("li");
         newUrl.innerHTML = `<a href='${url}'>${search}- ${current}°F</a>`;
         document.querySelector(".history ol").appendChild(newUrl);
-
+        document.querySelector(".days").innerHTML = "";
         // console.log(object.weather);
         let days = ["Today", "Tomorrow", "Day After Tomorrow"];
         for (let i = 0; i < days.length; i++) {
