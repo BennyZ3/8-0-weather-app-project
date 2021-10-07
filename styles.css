@@ -1,0 +1,37 @@
+header {
+  width: 80%;
+  padding: 10px 0px;
+  border: 3px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: darkcyan;
+  text-align: center;
+  color: white;
+  display: block;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 80%;
+  margin: 15px auto;
+}
+
+/* main article {
+  border: 1px solid black;
+} */
+
+.display {
+  text-align: center;
+  margin-right: 5px;
+  border: 1px solid green;
+  background-color: lightgray;
+}
+
+/* main article p {
+  padding: 30px;
+}
+
+.row1 {
+  height: 200px;
+} */
