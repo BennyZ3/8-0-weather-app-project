@@ -20,7 +20,15 @@ document.querySelector("form").addEventListener("submit", (event) => {
         let newUrl = document.createElement("li");
         newUrl.innerHTML = `<a href='${url}'>${search}- ${current}°F</a>`;
         document.querySelector(".history ol").appendChild(newUrl);
-        console.log(object.weather);
+
+        // console.log(object.weather);
+        let days = ["Today", "Tomorrow", "Day After Tomorrow"];
+        for (let i = 0; i < days.length; i++) {
+          let newDiv = document.createElement("div");
+          newDiv.append(dailyTemp(days[i], object.weather[i]));
+          document.querySelector(".days").append(newDiv);
+        }
+        console.log(dailyTemp("today", object.weather[0]));
       });
     })
     .catch(console.log);
@@ -28,7 +36,8 @@ document.querySelector("form").addEventListener("submit", (event) => {
 function dailyTemp(day, object) {
   let newDiv = document.createElement("div");
   newDiv.innerHTML = `<h3>${day}</h3>
-    <p><b>Average Temperature:</b> ${object[0].avgtempF}°F</p>
-    <p><b>Max Temperature:</b> ${object[0].maxtempF}°F</p>
-    <p><b>Min Temperature:</b> ${object[0].mintempF}°F</p>`;
+    <p><b>Average Temperature:</b> ${object.avgtempF}°F</p>
+    <p><b>Max Temperature:</b> ${object.maxtempF}°F</p>
+    <p><b>Min Temperature:</b> ${object.mintempF}°F</p>`;
+  return newDiv;
 }

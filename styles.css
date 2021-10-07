@@ -28,6 +28,11 @@ main {
   background-color: lightgray;
 }
 
+.days {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
 /* main article p {
   padding: 30px;
 }
