@@ -39,10 +39,14 @@ main {
 ol {
   list-style: inside;
 }
-
-@media (max-width: 1049px) {
+.history {
+  height: 200px;
+  overflow: scroll;
+}
+@media (max-width: 899px) {
   .days {
     width: 70%;
     grid-template-columns: 1fr;
+    grid-column: 1 / span 2;
   }
 }
