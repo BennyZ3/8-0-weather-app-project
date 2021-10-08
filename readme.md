@@ -2,6 +2,8 @@
 
 For this assignment, you will build a weather application that will make use of the [wttr.in API](https://github.com/chubin/wttr.in) to show the weather in different locations. Your application will also store previous searches.
 
+[My Weather App](https://bz-weather-app.surge.sh/)
+
 ## Project setup
 
 ### Getting started
