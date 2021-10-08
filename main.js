@@ -2,24 +2,35 @@ document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
   const search = event.target.location_search.value;
   if (!search) {
-    document.querySelector(".results").textContent = "Error: No text entered";
+    document.querySelector(".results").textContent =
+      "No text entered: going to nearest location";
   }
   document.querySelector("form").reset();
   let url = `https://wttr.in/${search}?format=j1`;
   fetch(url)
     .then((response) => {
       response.json().then((object) => {
+        //creating object for the result and days displays
         results(object);
         //assigning history
         document.querySelector(".history p").textContent = "";
         let newUrl = document.createElement("li");
+        //allowing the a tag to use a function rather than go to a link
         newUrl.innerHTML = `<a href="javascript:history('${url}')" value='${url} name='test'>${object.nearest_area[0].areaName[0].value}- ${object.current_condition[0].FeelsLikeF}°F</a>`;
         newUrl.addEventListener("onclick", (event) => {
           history(event.target.test.value);
         });
-        document.querySelector(".history ol").appendChild(newUrl);
-        // console.log(object.weather);
-        // console.log(dailyTemp("today", object.weather[0]));
+
+        const list = document.querySelector(".history ol");
+        let found = false;
+        document.querySelectorAll("ol li").forEach((element) => {
+          if (element.innerHTML === newUrl.innerHTML) {
+            found = true;
+          }
+        });
+        if (!found) {
+          list.appendChild(newUrl);
+        }
       });
     })
     .catch(console.log);
@@ -52,6 +63,7 @@ function results(object) {
   }
 }
 
+//reassigning to adjust to previous search url
 function history(url) {
   fetch(url).then((response) => {
     response.json().then((object) => {
