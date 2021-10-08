@@ -36,10 +36,13 @@ main {
 .days p {
   font-size: 14px;
 }
-/* main article p {
-  padding: 30px;
+ol {
+  list-style: inside;
 }
 
-.row1 {
-  height: 200px;
-} */
+@media (max-width: 1049px) {
+  .days {
+    width: 70%;
+    grid-template-columns: 1fr;
+  }
+}

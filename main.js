@@ -37,7 +37,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
 });
 function dailyTemp(day, object) {
   let newDiv = document.createElement("div");
-  newDiv.innerHTML = `<h3>${day}</h3>
+  newDiv.innerHTML = `<h3>${day} (${object.date})</h3>
     <p><b>Average Temperature:</b> ${object.avgtempF}°F</p>
     <p><b>Max Temperature:</b> ${object.maxtempF}°F</p>
     <p><b>Min Temperature:</b> ${object.mintempF}°F</p>`;
@@ -52,9 +52,9 @@ function results(object) {
   let country = object.nearest_area[0].country[0].value;
   let current = object.current_condition[0].FeelsLikeF;
   results.innerHTML = `<h2>${area}</h2><p><b>Area:</b> ${area}</p><p><b>Region:</b> ${region}</p><p><b>Country:</b> ${country}</p><p><b>Currently:</b> Feels like ${current}°F</p>`;
+
   //days display
   document.querySelector(".days").innerHTML = "";
-
   let days = ["Today", "Tomorrow", "Day After Tomorrow"];
   for (let i = 0; i < days.length; i++) {
     let newDiv = document.createElement("div");
