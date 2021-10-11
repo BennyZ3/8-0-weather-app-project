@@ -1,6 +1,7 @@
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
-  const search = event.target.location_search.value.toLowerCase();
+  //adding toLowerCase() breaks the tests
+  const search = event.target.location_search.value;
   if (!search) {
     document.querySelector(".results").textContent =
       "No text entered: going to nearest location";
@@ -29,7 +30,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
           }
         });
         if (!found) {
-          list.prepend(newUrl);
+          list.appendChild(newUrl);
         }
       });
     })
