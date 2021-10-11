@@ -75,7 +75,7 @@ function history(url) {
 }
 
 function backgroundConditions(object) {
-  let path = "images/grassland-g81543d7ea_1920.jpg";
+  let path = "images/mountain-gea904b008_1920.jpg";
   let bodySelector = document.querySelector("body");
   let precipitation = object.current_condition[0].precipInches;
   let currentTemp = object.current_condition[0].temp_F;
@@ -114,7 +114,7 @@ Just below freezing: Image by <a href="https://pixabay.com/users/matthias_groene
 
 Snowing: Image by <a href="https://pixabay.com/users/kristamonique-76979/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=201496">kristamonique</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=201496">Pixabay</a>
 
-Grassland: Image by <a href="https://pixabay.com/users/lxn15676204370-1461206/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2504234">lxn15676204370</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2504234">Pixabay</a>
+Normal day: Image by <a href="https://pixabay.com/users/kareni-5357143/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3351653">RÜŞTÜ BOZKUŞ</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3351653">Pixabay</a>
 
 Santa: Image by <a href="https://pixabay.com/users/couleur-1195798/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1819933">Couleur</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1819933">Pixabay</a>
 
