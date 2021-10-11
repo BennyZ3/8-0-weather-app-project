@@ -61,6 +61,8 @@ function results(object) {
     newDiv.append(dailyTemp(days[i], object.weather[i]));
     document.querySelector(".days").append(newDiv);
   }
+
+  backgroundConditions(object);
 }
 
 //reassigning to adjust to previous search url
@@ -71,3 +73,40 @@ function history(url) {
     });
   });
 }
+
+function backgroundConditions(object) {
+  let path = "images/death-valley-gfc668d35a_1920.jpg";
+  let bodySelector = document.querySelector("body");
+  let precipitation = object.current_condition[0].precipInches;
+  let currentTemp = object.current_condition[0].temp_F;
+  let cloudCover = object.current_condition[0].cloudcover;
+
+  if (precipitation > 0.1 && currentTemp < 32) {
+    path = "images/snowfall-ga14cc3d7e_1920.jpg";
+  } else if (precipitation > 0.4) {
+    path = "images/raindrops-g5b3270e36_1920.jpg";
+  } else if (cloudCover > 40) {
+    path = "images/lake-ge87252be2_1920.jpg";
+  } else if (currentTemp < 32) {
+    path = "images/ice-g4e4c0491c_1920.jpg";
+  }
+
+  bodySelector.style.backgroundImage = `url(${path})`;
+
+  document.querySelector(
+    ".extra"
+  ).innerHTML = `<p><b>Precip:</b> ${precipitation}</p><p><b>Current Temp:</b> ${currentTemp}°F</p><p><b>Cloud Cover:</b> ${cloudCover}</p>`;
+  //   document.querySelector(".extra").append(newDiv);
+}
+/*
+Image Credits:
+rain: Image by <a href="https://pixabay.com/users/joshua_seajw92-6153261/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3216607">준원 서</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3216607">Pixabay</a>
+
+Normal/Cloudy: Image by <a href="https://pixabay.com/users/12019-12019/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1679708">David Mark</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1679708">Pixabay</a>
+
+Sunny: Image by <a href="https://pixabay.com/users/jplenio-7645255/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3133502">jplenio</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3133502">Pixabay</a>
+
+Just below freezing: Image by <a href="https://pixabay.com/users/matthias_groeneveld-4535957/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3941906">Matthias Groeneveld</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3941906">Pixabay</a>
+
+Snowing: Image by <a href="https://pixabay.com/users/kristamonique-76979/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=201496">kristamonique</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=201496">Pixabay</a>
+*/

@@ -8,6 +8,7 @@ header {
   text-align: center;
   color: white;
   display: block;
+  opacity: 70%;
 }
 
 main {
@@ -21,11 +22,16 @@ main {
   border: 1px solid black;
 } */
 
-.resultBox {
+article {
   text-align: center;
   margin-right: 5px;
-  border: 1px solid green;
   background-color: lightgray;
+  opacity: 70%;
+  margin-bottom: 5px;
+}
+.resultBox,
+.history {
+  border: 1px solid green;
 }
 
 .days {
@@ -40,8 +46,10 @@ ol {
   list-style: inside;
 }
 .history {
-  height: 200px;
+  height: 210px;
   overflow: scroll;
+  text-align: left;
+  padding-left: 5px;
 }
 @media (max-width: 899px) {
   .days {
@@ -49,4 +57,9 @@ ol {
     grid-template-columns: 1fr;
     grid-column: 1 / span 2;
   }
+}
+
+body {
+  /* background-image: url("images/death-valley-gfc668d35a_1920.jpg"); */
+  background-size: cover;
 }
