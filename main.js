@@ -75,7 +75,7 @@ function history(url) {
 }
 
 function backgroundConditions(object) {
-  let path = "images/death-valley-gfc668d35a_1920.jpg";
+  let path = "images/grassland-g81543d7ea_1920.jpg";
   let bodySelector = document.querySelector("body");
   let precipitation = object.current_condition[0].precipInches;
   let currentTemp = object.current_condition[0].temp_F;
@@ -89,6 +89,8 @@ function backgroundConditions(object) {
     path = "images/lake-ge87252be2_1920.jpg";
   } else if (currentTemp < 32) {
     path = "images/ice-g4e4c0491c_1920.jpg";
+  } else if (currentTemp > 80) {
+    path = "images/death-valley-gfc668d35a_1920.jpg";
   }
 
   bodySelector.style.backgroundImage = `url(${path})`;
