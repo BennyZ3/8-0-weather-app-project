@@ -30,6 +30,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
           }
         });
         if (!found) {
+          //prepend also causes last test to fail
           list.appendChild(newUrl);
         }
       });
@@ -62,7 +63,7 @@ function results(object) {
     newDiv.append(dailyTemp(days[i], object.weather[i]));
     document.querySelector(".days").append(newDiv);
   }
-
+  //call for background shift
   backgroundConditions(object);
 }
 
@@ -81,7 +82,7 @@ function backgroundConditions(object) {
   let precipitation = object.current_condition[0].precipInches;
   let currentTemp = object.current_condition[0].temp_F;
   let cloudCover = object.current_condition[0].cloudcover;
-
+  //conditions and linked images
   if (precipitation > 0.1 && currentTemp < 32) {
     path = "images/snowfall-ga14cc3d7e_1920.jpg";
   } else if (precipitation > 0.4) {
@@ -97,11 +98,10 @@ function backgroundConditions(object) {
   }
 
   bodySelector.style.backgroundImage = `url(${path})`;
-
+  //Extra Parameter box
   document.querySelector(
     ".extra"
   ).innerHTML = `<p><b>Precip:</b> ${precipitation}</p><p><b>Current Temp:</b> ${currentTemp}°F</p><p><b>Cloud Cover:</b> ${cloudCover}</p>`;
-  //   document.querySelector(".extra").append(newDiv);
 }
 /*
 Image Credits:

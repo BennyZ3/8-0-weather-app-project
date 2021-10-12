@@ -9,6 +9,7 @@ header {
   color: white;
   display: block;
   opacity: 70%;
+  border-radius: 20px;
 }
 
 main {
@@ -18,11 +19,8 @@ main {
   margin: 15px auto;
 }
 
-/* main article {
-  border: 1px solid black;
-} */
-
 article {
+  border-radius: 20px;
   text-align: center;
   margin-right: 5px;
   background-color: lightgray;
