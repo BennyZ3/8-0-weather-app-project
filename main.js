@@ -53,7 +53,7 @@ function results(object) {
   let region = object.nearest_area[0].region[0].value;
   let country = object.nearest_area[0].country[0].value;
   let current = object.current_condition[0].FeelsLikeF;
-  results.innerHTML = `<h2>${area}</h2><p><b>Area:</b> ${area}</p><p><b>Region:</b> ${region}</p><p><b>Country:</b> ${country}</p><p><b>Currently:</b> Feels like ${current}°F</p>`;
+  results.innerHTML = `<h2">${area}</h2><p><b>Area:</b> ${area}</p><p><b>Region:</b> ${region}</p><p><b>Country:</b> ${country}</p><p><b>Currently:</b> Feels like ${current}°F</p>`;
 
   //days display
   document.querySelector(".days").innerHTML = "";
@@ -103,6 +103,26 @@ function backgroundConditions(object) {
     ".extra"
   ).innerHTML = `<p><b>Precip:</b> ${precipitation}</p><p><b>Current Temp:</b> ${currentTemp}°F</p><p><b>Cloud Cover:</b> ${cloudCover}</p>`;
 }
+
+const container = document.querySelector("body");
+const card = document.querySelectorAll(".card");
+
+// console.log(title);
+container.addEventListener("mousemove", (event) => {
+  let xAxis = (window.innerWidth / 2 - event.pageX) / 10;
+  let yAxis = (window.innerHeight / 2 - event.pageY) / 10;
+
+  card.forEach((item) => {
+    item.style.transform = `rotateY(${-xAxis}deg) rotateX(${yAxis}deg)`;
+  });
+});
+
+container.addEventListener("mouseleave", (e) => {
+  card.forEach((item) => {
+    item.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  });
+});
+
 /*
 Image Credits:
 rain: Image by <a href="https://pixabay.com/users/joshua_seajw92-6153261/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3216607">준원 서</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3216607">Pixabay</a>

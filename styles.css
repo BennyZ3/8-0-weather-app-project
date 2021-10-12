@@ -61,3 +61,21 @@ body {
   background-image: url("images/world-g907086cfa_1280.png");
   background-size: cover;
 }
+
+/* animation test */
+
+/* main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.card {
+  transition: 0.125s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.75), 0px 0px 50px rgba(0, 0, 0, 0.75);
+}
+
+.resultBox {
+  transform: translateZ(500px);
+}
