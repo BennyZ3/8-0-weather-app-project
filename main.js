@@ -87,14 +87,14 @@ function backgroundConditions(object) {
     path = "images/snowfall-ga14cc3d7e_1920.jpg";
   } else if (precipitation > 0.4) {
     path = "images/raindrops-g5b3270e36_1920.jpg";
-  } else if (cloudCover > 40) {
-    path = "images/lake-ge87252be2_1920.jpg";
   } else if (currentTemp < 32) {
     path = "images/ice-g4e4c0491c_1920.jpg";
   } else if (currentTemp < 15) {
     path = "images/santa-claus-g83d71f4dc_1920.jpg";
   } else if (currentTemp > 80) {
     path = "images/death-valley-gfc668d35a_1920.jpg";
+  } else if (cloudCover > 50) {
+    path = "images/lake-ge87252be2_1920.jpg";
   }
 
   bodySelector.style.backgroundImage = `url(${path})`;
